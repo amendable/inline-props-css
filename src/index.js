@@ -1,4 +1,4 @@
-import propsAndStyle from './propsAndStyle';
+import propsAndCss from './propsAndCss';
 
 const inlineProps = (options) => (originalProps) => {
   const { css, props } = propsAndCss(originalProps);
