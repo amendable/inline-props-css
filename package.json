@@ -21,7 +21,7 @@
     "rimraf": "^3.0.0"
   },
   "scripts": {
-    "build": "rimraf build && microbundle build --no-compress --name amendableInlinePropsCss",
+    "build": "rimraf dist && microbundle build --no-compress --name amendableInlinePropsCss",
     "watch": "microbundle watch --no-compress",
     "test": "jest"
   },
