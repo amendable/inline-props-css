@@ -6,20 +6,49 @@ This resolver merges all the React props that match the names of styling props i
 ```jsx sandbox
 import { render } from 'react-dom'
 import Box, { AmendableProvider } from '@amendable/core'
-import inlineStyles from '@amendable/inline-styles'
+import inlinePropsToCss from '@amendable/inline-props-css'
+
+const resolvers = [
+  inlinePropsToCss(),
+]
 
 render(
-  <AmendableProvider
-    resolvers={[
-      inlineStyles(),
-    ]}
-  >
-    <Box color='white' backgroundColor='black'>
-      Primary color
+  <AmendableProvider resolvers={resolvers}>
+    <Box
+      display="flex"
+      backgroundColor="red"
+      padding={64}
+      paddingBottom={34}
+      color="blue"
+      hoverBackgroundColor="blue"
+      hoverColor="red"
+    >
+      Amendable
     </Box>
   </AmendableProvider>
 )
 ```
+
+This will be resolved to
+
+```jsx
+  <Box
+    css={{
+      display: 'flex',
+      backgroundColor: 'red',
+      padding: 64,
+      paddingBottom: 34,
+      color: 'blue',
+      '&:hover': {
+        backgroundColor: 'blue',
+        color: 'red'
+      }
+    }}
+  >
+    Amendable
+  </Box>
+```
+
 
 ## Supported props
 
