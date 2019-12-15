@@ -12,25 +12,25 @@
     "url": "https://github.com/amendable/inline-props-css/issues"
   },
   "repository": "amendable/inline-props-css",
+  "dependencies": {
+    "@amendable/inline-style-properties": "^0.4.0",
+    "@babel/runtime": "^7.7.6",
+    "lodash": "^4.17.15"
+  },
   "devDependencies": {
+    "@amendable/prettier-config": "^1.0.0",
     "@babel/preset-env": "^7.7.6",
     "@babel/preset-react": "^7.7.4",
     "babel-plugin-lodash": "^3.3.4",
     "jest": "^24.9.0",
     "microbundle": "^0.11.0",
+    "prettier": "^1.19.1",
     "rimraf": "^3.0.0"
   },
   "scripts": {
     "build": "rimraf dist && microbundle build --no-compress --name amendableInlinePropsCss",
     "watch": "microbundle watch --no-compress",
     "test": "jest"
-  },
-  "dependencies": {
-    "@amendable/inline-style-properties": "^0.4.0",
-    "@amendable/prettier-config": "^1.0.0",
-    "@babel/runtime": "^7.7.6",
-    "lodash": "^4.17.15",
-    "prettier": "^1.19.1"
   },
   "prettier": "@amendable/prettier-config"
 }
