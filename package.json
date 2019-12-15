@@ -1,0 +1,30 @@
+{
+  "name": "@amendable/inline-props-css",
+  "version": "0.1.0",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "files": [
+    "dist"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/amendable/inline-props-css",
+  "bugs": {
+    "url": "https://github.com/amendable/inline-props-css/issues"
+  },
+  "repository": "amendable/inline-props-css",
+  "devDependencies": {
+    "@babel/preset-env": "^7.7.6",
+    "@babel/preset-react": "^7.7.4",
+    "jest": "^24.9.0",
+    "microbundle": "^0.11.0"
+  },
+  "scripts": {
+    "build": "microbundle build --no-compress --name amendableInlinePropsCss",
+    "watch": "microbundle watch --no-compress",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@amendable/inline-style-properties": "^0.3.0",
+    "@babel/runtime": "^7.7.6"
+  }
+}

@@ -1,0 +1,17 @@
+import propsAndCss from '../src/propsAndCss'
+
+it('returns correct props and css', () => {
+  const { css, props } = propsAndCss({ display: 'block', color: 'red', test: 'me' });
+  expect(css).toEqual({ display: 'block', color: 'red' });
+  expect(props).toEqual({ test: 'me' });
+})
+
+it('returns correct props and css when other css is specified last', () => {
+  const { css, props } = propsAndCss({ display: 'block', css: { display: 'none' } });
+  expect(css).toEqual({ display: 'none' });
+})
+
+it('returns correct props and css when other css is specified first', () => {
+  const { css, props } = propsAndCss({ css: { display: 'none' }, display: 'block' });
+  expect(css).toEqual({ display: 'block' });
+})
