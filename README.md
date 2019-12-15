@@ -6,10 +6,10 @@ This resolver merges all the React props that match the names of styling props i
 ```jsx sandbox
 import { render } from 'react-dom'
 import Box, { AmendableProvider } from '@amendable/core'
-import inlinePropsToCss from '@amendable/inline-props-css'
+import inlinePropsCss from '@amendable/inline-props-css'
 
 const resolvers = [
-  inlinePropsToCss(),
+  inlinePropsCss(),
 ]
 
 render(
