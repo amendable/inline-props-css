@@ -1,4 +1,6 @@
+import _ from 'lodash';
 import { hasProperty } from '@amendable/inline-style-properties';
+import extractStateProp from './extractStateProp';
 
 export default (originalProps) => {
   const css = {};
@@ -6,11 +8,14 @@ export default (originalProps) => {
 
   Object.keys(originalProps).forEach(key => {
     const value = originalProps[key];
+    const withState = extractStateProp(key);
 
-    if (hasProperty(key)) {
+    if (withState) {
+      _.merge(css, { [`&:${withState.state}`]: { [withState.prop]: value } });
+    } else if (hasProperty(key)) {
       css[key] = value;
     } else if (key === 'css') {
-      Object.assign(css, originalProps[key]);
+      _.merge(css, originalProps[key]);
     } else {
       props[key] = value;
     }

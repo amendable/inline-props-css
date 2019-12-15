@@ -15,3 +15,20 @@ it('returns correct props and css when other css is specified first', () => {
   const { css, props } = propsAndCss({ css: { display: 'none' }, display: 'block' });
   expect(css).toEqual({ display: 'block' });
 })
+
+it('returns correct props and css when using states', () => {
+  const { css, props } = propsAndCss({
+    backgroundColor: 'red',
+    hoverBackgroundColor: 'green',
+    color: 'green',
+    hoverColor: 'red',
+  });
+  expect(css).toEqual({
+    backgroundColor: 'red',
+    color: 'green',
+    '&:hover': {
+      backgroundColor: 'green',
+      color: 'red',
+    }
+  });
+})
