@@ -27,7 +27,10 @@
   },
   "dependencies": {
     "@amendable/inline-style-properties": "^0.4.0",
+    "@amendable/prettier-config": "^1.0.0",
     "@babel/runtime": "^7.7.6",
-    "lodash": "^4.17.15"
-  }
+    "lodash": "^4.17.15",
+    "prettier": "^1.19.1"
+  },
+  "prettier": "@amendable/prettier-config"
 }

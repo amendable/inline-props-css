@@ -6,7 +6,7 @@ export default (originalProps) => {
   const css = {};
   const props = {};
 
-  Object.keys(originalProps).forEach(key => {
+  Object.keys(originalProps).forEach((key) => {
     const value = originalProps[key];
     const withState = extractStateProp(key);
 
@@ -22,4 +22,4 @@ export default (originalProps) => {
   });
 
   return { css, props };
-}
+};
