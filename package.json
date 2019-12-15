@@ -17,10 +17,11 @@
     "@babel/preset-react": "^7.7.4",
     "babel-plugin-lodash": "^3.3.4",
     "jest": "^24.9.0",
-    "microbundle": "^0.11.0"
+    "microbundle": "^0.11.0",
+    "rimraf": "^3.0.0"
   },
   "scripts": {
-    "build": "microbundle build --no-compress --name amendableInlinePropsCss",
+    "build": "rimraf build && microbundle build --no-compress --name amendableInlinePropsCss",
     "watch": "microbundle watch --no-compress",
     "test": "jest"
   },
