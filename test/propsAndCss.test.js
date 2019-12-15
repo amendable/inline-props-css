@@ -16,7 +16,7 @@ it('returns correct props and css when other css is specified first', () => {
   expect(css).toEqual({ display: 'block' });
 })
 
-it('returns correct props and css when using states', () => {
+it('returns correct props and css when using hover state', () => {
   const { css, props } = propsAndCss({
     backgroundColor: 'red',
     hoverBackgroundColor: 'green',
@@ -29,6 +29,19 @@ it('returns correct props and css when using states', () => {
     '&:hover': {
       backgroundColor: 'green',
       color: 'red',
+    }
+  });
+})
+
+it('returns correct props and css when using placeholder state', () => {
+  const { css, props } = propsAndCss({
+    color: 'blue',
+    placeholderColor: 'green',
+  });
+  expect(css).toEqual({
+    color: 'blue',
+    '::placeholder': {
+      color: 'green',
     }
   });
 })

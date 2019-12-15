@@ -1,11 +1,11 @@
 import _ from 'lodash';
 import { hasProperty } from '@amendable/inline-style-properties';
 
-const states = ['visited', 'hover', 'focus', 'active'];
+const states = ['visited', 'hover', 'focus', 'active', 'placeholder'];
 const statesRegex = new RegExp(`(${states.join('|')})(\\w+)`);
 
-export default (key) => {
-  const matches = key.match(statesRegex);
+export default (propName) => {
+  const matches = propName.match(statesRegex);
   if (!matches) {
     return;
   }
@@ -16,5 +16,7 @@ export default (key) => {
     return;
   }
 
-  return { state, prop };
+  const key = state === 'placeholder' ? `::${state}` : `&:${state}`;
+
+  return { state, prop, key };
 };

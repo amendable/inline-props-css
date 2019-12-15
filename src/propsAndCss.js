@@ -11,7 +11,7 @@ export default (originalProps) => {
     const withState = extractStateProp(key);
 
     if (withState) {
-      _.merge(css, { [`&:${withState.state}`]: { [withState.prop]: value } });
+      _.merge(css, { [withState.key]: { [withState.prop]: value } });
     } else if (hasProperty(key)) {
       css[key] = value;
     } else if (key === 'css') {
