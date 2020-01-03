@@ -1,6 +1,6 @@
 import propsAndCssResolver from '../src/propsAndCss'
 
-const propsAndCss = (props) => propsAndCssResolver(props, { applyResolvers: (it) => it });
+const propsAndCss = (props) => propsAndCssResolver(props, { applyResolvers: (it) => ({ css: it }) });
 
 it('returns correct props and css', () => {
   const { css, props } = propsAndCss({ display: 'block', color: 'red', test: 'me' });
