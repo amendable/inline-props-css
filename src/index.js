@@ -1,7 +1,7 @@
 import propsAndCss from './propsAndCss';
 
-const inlineProps = (options) => (originalProps) => {
-  const { css, props } = propsAndCss(originalProps);
+const inlineProps = (options) => (originalProps, { applyResolvers }) => {
+  const { css, props } = propsAndCss(originalProps, { applyResolvers });
   return { ...props, css };
 };
 

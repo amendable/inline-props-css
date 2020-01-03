@@ -2,7 +2,7 @@ import _ from 'lodash';
 import { hasProperty } from '@amendable/inline-style-properties';
 import extractStateProp from './extractStateProp';
 
-export default (originalProps) => {
+export default (originalProps, { applyResolvers }) => {
   const css = {};
   const props = {};
 
@@ -11,7 +11,7 @@ export default (originalProps) => {
     const withState = extractStateProp(key);
 
     if (withState) {
-      _.merge(css, { [withState.key]: { [withState.prop]: value } });
+      _.merge(css, { [withState.key]: applyResolvers({ [withState.prop]: value }) });
     } else if (hasProperty(key)) {
       css[key] = value;
     } else if (key === 'css') {
