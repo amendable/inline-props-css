@@ -11,7 +11,7 @@ export default (originalProps, { applyResolvers }) => {
     const withState = extractStateProp(key);
 
     if (withState) {
-      _.merge(css, { [withState.key]: applyResolvers({ [withState.prop]: value }) });
+      _.merge(css, { [withState.key]: applyResolvers({ [withState.prop]: value }).css });
     } else if (hasProperty(key)) {
       css[key] = value;
     } else if (key === 'css') {
