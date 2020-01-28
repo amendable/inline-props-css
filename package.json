@@ -1,8 +1,8 @@
 {
   "name": "@amendable/inline-props-css",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "main": "dist/index.js",
-  "module": "dist/index.esm.js",
+  "module": "dist/index.modern.js",
   "files": [
     "dist"
   ],
